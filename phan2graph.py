@@ -38,6 +38,7 @@ def sendtographite(message,server,port):
     sock.sendall(message)
     sock.close()
 
+
 def main():
     logging.info('Start PhantomasCSV to Graphite Script')
     parser = optparse.OptionParser("%prog -H <Host> -f <csv filepath> [options]")
