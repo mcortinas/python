@@ -5,7 +5,7 @@ Created on 13/08/2014
 This python script parse CSV obtained from phantomas and send all files to graphite 
 EXAMPLE:
 phantomas http://foo.com --no-externals -R csv:timestamp > foo.com
-python phantomas.py -H localhost -f foo.com
+python phan2graph.py -H localhost -f foo.com
  
 Basic Steps 
  1. Check params
