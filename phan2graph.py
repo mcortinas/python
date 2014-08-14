@@ -44,7 +44,6 @@ def main():
     parser.add_option('-H','--host', help='mandatory: host or ip of graphite server',dest='host')
     parser.add_option('-f','--file',help='mandatory: file path of csv source',dest='file')
     parser.add_option('-p','--port',help='port of graphite server, default 2003',dest='port',default='2003')
-    parser.add_option('--password', help='Graphite path to import data',dest='gpath')
     parser.add_option('--dry-run',help='no actions taken, only read and emulate',dest='dryrun',default=False,action='store_true')
     parser.add_option('-v','--verbose',help='verbose mode, all actions will be logged',dest='verbose',default=False,action='store_true')
     (opts,args)=parser.parse_args()
