@@ -13,7 +13,7 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'project1.db',                      # Or path to database file if using sqlite3.
+        'NAME': 'diari.db',                      # Or path to database file if using sqlite3.
         # The following settings are not used with sqlite3:
         'USER': '',
         'PASSWORD': '',
@@ -85,7 +85,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = 'u_(q#c3lyjps$v)qbud%@=*_8%g72ylj=#di&p+!nbtnlzz@)$'
+SECRET_KEY = '7_as!7axtsit!fhnl1h5((ta@pbgst0u@!&okoyo_8j@2!@_31'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (
@@ -104,17 +104,16 @@ MIDDLEWARE_CLASSES = (
     # 'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'project1.urls'
+ROOT_URLCONF = 'diari.urls'
 
 # Python dotted path to the WSGI application used by Django's runserver.
-WSGI_APPLICATION = 'project1.wsgi.application'
+WSGI_APPLICATION = 'diari.wsgi.application'
 
 TEMPLATE_DIRS = (
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
-    os.path.join(os.path.dirname(__file__), '../templates').replace('\\', '/'),
-    os.path.join(os.path.dirname(__file__), '../blog/templates').replace('\\', '/'),
+    os.path.join(os.path.dirname(__file__), '../contingut/templates').replace('\\', '/'),
 )
 
 INSTALLED_APPS = (
@@ -125,10 +124,9 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
-    'blog'
 )
 
 # A sample logging configuration. The only tangible logging

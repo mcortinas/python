@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+POST {{ post.title }}
+{% endblock %}
+
+{% block content %}
+<div id="post">
+  <h3>{{ post.title }}</h3>
+  <span>{{ post.published_at }}</span>
+  <p>
+    {{ post.body }}
+  </p>
+  {% for link in links %}
+  {% if forloop.first %}
+  <h4>Enllaços</h4>
+  <ul id="links">
+  {% endif %}
+  <li>
+    <a href="{{ link.uri }}">
+      {{ link.name }}
+    </a>
+  </li>
+  {% if forloop.last %}
+  </ul>
+  {% endif %}
+  {% empty %}
+  <h4>No hi ha enllaços</h4>
+  {% endfor %}
+</div>
+<a href="{% url 'blog' %}">
+  Tornar
+</a>
+{% endblock %}
+
+{% block sidebar %}
+{% for post in outstanding_posts %}
+{% if forloop.first %}
+<ul id="outstanding_posts">
+{% endif %}
+
+<li>
+  <a href="{{ post.get_absolute_url }}">
+    {{ post.title }}
+  </a>
+</li>
+
+{% if forloop.last %}
+</ul>
+{% endif %}
+{% empty %}
+<h3>No hi han posts actualment</h3>
+{% endfor %}
+{% endblock %}
