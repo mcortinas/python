@@ -12,13 +12,17 @@ class New(models.Model):
     created_at = models.DateTimeField(verbose_name = u"created at")
     published_at = models.DateTimeField(verbose_name = u"published at")
     visits = models.IntegerField(default = 0, verbose_name = u"visits")
+    # Relations
+    section = models.ForeignKey(u"Section",
+                             related_name = u"links",
+                             verbose_name = u"section")
     # Functions
     def __unicode__(self):
         return self.title
-
+    
     @models.permalink
     def get_absolute_url(self):
-        return ("post", [str(self.id)])
+        return ("section", [str(self.id)])
 
     def save(self, *args, **kwargs):
         if not self.created_at:
@@ -33,4 +37,11 @@ class Announce(models.Model):
     body = models.TextField(verbose_name = u"body")
 
 class Section(models.Model):
+    title = models.CharField(max_length = 300,
+                             verbose_name = u"title")
+    description = models.TextField(verbose_name = u"description")
     
+    # Relations
+    section = models.ForeignKey(u"Section",
+                             related_name = u"links",
+                             verbose_name = u"section")

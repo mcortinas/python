@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>
+  {{ category.name }} - {% now "jS F Y" %}
+</h2>
+<div>
+  <h3>Sub-categories</h3>
+<ul>
+  {% for category in categories %}
+  <li>
+    <h4>
+      <a href="{% url category_detail category.slug %}">
+        {{ category.name }}
+      </a>
+    </h4>
+  </li>
+  {% endfor %}
+</ul>  
+</div>
+<div>
+<h3>Noticies</h3>
+<ul>
+  {% for article in articles %}
+  <li>
+    <h4>{{ article.title }}</h4>
+    <span>{{ article.publish_date }}</span>
+    <p>{{ article.summary }}</p>
+    <span>
+      <a href="{% url article_detail article.slug %}">
+        + informació
+      </a>
+    </span>
+  </li>
+  {% endfor %}
+</ul>
+</div>
+{% endblock %}

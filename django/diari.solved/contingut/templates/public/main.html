@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h2>
+  {% now "jS F Y" %}
+</h2>
+<ul>
+  {% for article in articles %}
+  <li>
+    <h4>{{ article.title }}</h4>
+    <span>{{ article.publish_date }}</span>
+    <p>{{ article.summary }}</p>
+    <span>
+      <a href="{% url article_detail article.slug %}">
+        + informació
+      </a>
+    </span>
+  </li>
+  {% endfor %}
+</ul>
+{% endblock %}

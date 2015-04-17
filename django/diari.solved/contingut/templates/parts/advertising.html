@@ -1,0 +1,12 @@
+<div>
+  <h3>Anuncis</h3>
+  <ul>
+    {% for ad in ads %}
+    <li>
+      <a href="{{ ad.uri }}">
+        {{ ad.name }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

@@ -1,0 +1,10 @@
+<ul>
+  {% for comment in comments %}
+  <li>
+    <span>{{ comment.author }} - {{ comment.timestamp }}</span>
+    <p>
+      {{ comment.message }}
+    </p>
+  </li>
+  {% endfor %}
+</ul>

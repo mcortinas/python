@@ -1,0 +1,12 @@
+<div>
+  <h3>Més visitats</h3>
+  <ul>
+    {% for ar in articles %}
+    <li>
+      <a href="{{ ar.uri }}">
+        {{ ar.title }}
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

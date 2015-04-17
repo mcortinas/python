@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load diari_tags %}
+
+{% block content %}
+<h2>{{ instance.title }}</h2>
+<span>{{ instance.publish_date }}</span>
+<p>{{ instance.content }}</p>
+<h3>Comentaris</h3>
+<form action="" method="POST">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Enviar"/>
+</form>
+{% show_comments %}
+{% endblock %}
